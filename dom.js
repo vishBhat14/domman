@@ -33,3 +33,17 @@ console.log(title);
 title[0].style.fontWeight='bold';
 title[0].style.color='green';
 
+
+//task4commit
+var items= document.getElementsByClassName('list-group-item');
+console.log(items);
+//items[1].textContent='hello2';
+
+items[2].style.backgroundColor='green';
+
+
+//iterating thru lists to change to bold color
+for(var i=0;i<items.length;i++)
+{
+    items[i].style.fontWeight='bold';
+}
