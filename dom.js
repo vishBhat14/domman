@@ -14,17 +14,17 @@ console.log(document.links);
 console.log(document.images)
 
 // get element by id
-console.log(document.getElementById('header-title'));
-var headerTitle=document.getElementById('header-title');
-var header=document.getElementById('main-header');
-console.log(headerTitle);
+//console.log(document.getElementById('header-title'));
+//var headerTitle=document.getElementById('header-title');
+//var header=document.getElementById('main-header');
+//console.log(headerTitle);
 //headerTitle.textContent="hello";
 //headerTitle.innerText="hel";
-console.log(headerTitle.textContent);
-console.log(headerTitle.innerText);
+//console.log(headerTitle.textContent);
+//console.log(headerTitle.innerText);
 //headerTitle.innerHTML='<h3>hell</h3>';
-headerTitle.style.borderBottom= 'solid 3px #000';
-header.style.borderBottom='solid 2px #000';
+//headerTitle.style.borderBottom= 'solid 3px #000';
+//header.style.borderBottom='solid 2px #000';
 
 //getelement by class
 
@@ -52,12 +52,52 @@ title[0].style.color='green';
 
 //task5 get elements by tag name
 
-var li=document.getElementsByTagName('li');
-console.log(li);
-li[0].style.fontWeight='bold';
+//var li=document.getElementsByTagName('li');
+//console.log(li);
+//li[0].style.fontWeight='bold';
 //li[0].style.color='green';
 
-for(var i=0;i<li.length;i++)
+//for(var i=0;i<li.length;i++)
 {
-    li[i].style.backgroundColor='#f4f4f4';
+    //li[i].style.backgroundColor='#f4f4f4';
+}
+
+//queryselector
+
+var header=document.querySelector('#main-header');
+header.style.borderBottom='solid 4px #ccc ';
+var input=document.querySelector('input');
+input.value='hello';
+
+var submit=document.querySelector('input[type=submit]');
+submit.value='send';
+
+//var item=document.querySelector('.list-group-item');
+//item.style.color='red';
+
+
+//var lastitem=document.querySelector('.list-group-item:last-child');
+//lastitem.style.color="blue";
+ 
+var nthitem=document.querySelector('.list-group-item:nth-child(2)');
+nthitem.style.backgroundColor='green';
+
+var nnitem=document.querySelector('.list-group-item:nth-child(3)');
+nnitem.style.visibility='hidden';
+
+
+//queryselectorall
+var li=document.querySelectorAll('li');
+li[1].style.color='green';
+
+var odd=document.querySelectorAll('li:nth-child(odd)');
+for(var i=0;i<odd.length;i++)
+{
+    odd[i].style.backgroundColor='green';
+}
+
+//var even=document.querySelectorAll('li:nth-child(even)');
+//for(var i=0;i<even.length;i++)
+{
+    //even[i].style.backgroundColor='#ccc';
 }
