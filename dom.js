@@ -34,16 +34,30 @@ title[0].style.fontWeight='bold';
 title[0].style.color='green';
 
 
-//task4commit
-var items= document.getElementsByClassName('list-group-item');
-console.log(items);
+//task4commit.
+//var items= document.getElementsByClassName('list-group-item');
+//console.log(items);
 //items[1].textContent='hello2';
 
-items[2].style.backgroundColor='green';
+//items[2].style.backgroundColor='green';
 
 
 //iterating thru lists to change to bold color
-for(var i=0;i<items.length;i++)
+//for(var i=0;i<items.length;i++)
 {
-    items[i].style.fontWeight='bold';
+   // items[i].style.fontWeight='bold';
+   // items[i].style.backgroundColor='#f4f4f4';
+}
+
+
+//task5 get elements by tag name
+
+var li=document.getElementsByTagName('li');
+console.log(li);
+li[0].style.fontWeight='bold';
+//li[0].style.color='green';
+
+for(var i=0;i<li.length;i++)
+{
+    li[i].style.backgroundColor='#f4f4f4';
 }
