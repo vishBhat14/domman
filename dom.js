@@ -1,37 +1,37 @@
-console.dir(document); //examine the document object
+// console.dir(document); //examine the document object
 
-console.log(document.domain);
-console.log(document.URL);
-console.log(document.title);
-//document.title=123;
-console.log(document.doctype);
-console.log(document.head);
-console.log(document.body);
-console.log(document.all);
-console.log(document.all[10]);
-console.log(document.forms);
-console.log(document.links);
-console.log(document.images)
+// console.log(document.domain);
+// console.log(document.URL);
+// console.log(document.title);
+// //document.title=123;
+// console.log(document.doctype);
+// console.log(document.head);
+// console.log(document.body);
+// console.log(document.all);
+// console.log(document.all[10]);
+// console.log(document.forms);
+// console.log(document.links);
+// console.log(document.images)
 
-// get element by id
-//console.log(document.getElementById('header-title'));
-//var headerTitle=document.getElementById('header-title');
-//var header=document.getElementById('main-header');
-//console.log(headerTitle);
-//headerTitle.textContent="hello";
-//headerTitle.innerText="hel";
-//console.log(headerTitle.textContent);
-//console.log(headerTitle.innerText);
-//headerTitle.innerHTML='<h3>hell</h3>';
-//headerTitle.style.borderBottom= 'solid 3px #000';
-//header.style.borderBottom='solid 2px #000';
+// // get element by id
+// //console.log(document.getElementById('header-title'));
+// //var headerTitle=document.getElementById('header-title');
+// //var header=document.getElementById('main-header');
+// //console.log(headerTitle);
+// //headerTitle.textContent="hello";
+// //headerTitle.innerText="hel";
+// //console.log(headerTitle.textContent);
+// //console.log(headerTitle.innerText);
+// //headerTitle.innerHTML='<h3>hell</h3>';
+// //headerTitle.style.borderBottom= 'solid 3px #000';
+// //header.style.borderBottom='solid 2px #000';
 
-//getelement by class
+// //getelement by class
 
-var title=document.getElementsByClassName('title');
-console.log(title);
-title[0].style.fontWeight='bold';
-title[0].style.color='green';
+// var title=document.getElementsByClassName('title');
+// console.log(title);
+// title[0].style.fontWeight='bold';
+// title[0].style.color='green';
 
 
 //task4commit.
@@ -104,7 +104,7 @@ title[0].style.color='green';
 
 //traversing the dom
 
-var itemlist=document.querySelector('#items');
+// var itemlist=document.querySelector('#items');
 
 //parentnodeproperty
 
@@ -143,41 +143,97 @@ var itemlist=document.querySelector('#items');
 
 //newdiv
 
-var newDiv = document.createElement('div');
-console.log(newDiv);
+// var newDiv = document.createElement('div');
+// console.log(newDiv);
 
-// addclass
-newDiv.className='hello';
+// // addclass
+// newDiv.className='hello';
 
-console.log(newDiv);
+// console.log(newDiv);
 
-//add id
-newDiv.id='hello1';
+// //add id
+// newDiv.id='hello1';
 
-console.log(newDiv);
+// console.log(newDiv);
 
-//add attributr
+// //add attributr
 
-newDiv.setAttribute('title','hellowo');
-console.log(newDiv);
+// newDiv.setAttribute('title','hellowo');
+// console.log(newDiv);
 
-//addtextnode
-var newdivtext=document.createTextNode('hello world');
+// //addtextnode
+// var newdivtext=document.createTextNode('hello world');
 
-//append textnode to newdiv
-newDiv.appendChild(newdivtext);
-console.log(newDiv);
+// //append textnode to newdiv
+// newDiv.appendChild(newdivtext);
+// console.log(newDiv);
 
-var container= document.querySelector('header .container');
-var h1=document.querySelector('header h1');
-console.log(newDiv);
+// var container= document.querySelector('header .container');
+// var h1=document.querySelector('header h1');
+// console.log(newDiv);
 
 
-container.insertBefore(newDiv, h1);
-console.log(itemlist.parentNode);
+// container.insertBefore(newDiv, h1);
+// console.log(itemlist.parentNode);
 
-var itemlisterr=document.querySelector('div .list-group-item');
+// var itemlisterr=document.querySelector('div .list-group-item');
 
-console.log(itemlisterr);
-var itemss=document.querySelector('div #items');
-itemss.insertBefore(newDiv,itemlisterr);
+// console.log(itemlisterr);
+// var itemss=document.querySelector('div #items');
+// itemss.insertBefore(newDiv,itemlisterr);
+
+
+
+
+var form = document.getElementById('addForm');
+var itemList = document.getElementById('items');
+//form submit event
+form.addEventListener('submit', addItem);
+//delete event
+itemList.addEventListener('click',removeItem);
+function addItem(e){
+    e.preventDefault();
+  
+    // Get input value
+    var newItem = document.getElementById('item').value;
+  
+    // Create new li element
+    var li = document.createElement('li');
+    // Add class
+    li.className = 'list-group-item';
+    // Add text node with input value
+    li.appendChild(document.createTextNode(newItem));
+// creatwe delete button
+
+var delbtn=document.createElement('button');
+//add class
+delbtn.className='btn btn-danger btn-sm float-right delete';
+//add text node with 
+delbtn.appendChild(document.createTextNode('X'));
+li.appendChild(delbtn);
+
+//add edit button
+var editbtn=document.createElement('button');
+//add class
+editbtn.className='btn btn-danger btn-sm float-right delete';
+//add text
+editbtn.appendChild(document.createTextNode('edit'));
+li.appendChild(editbtn);
+    itemList.appendChild(li);
+
+    
+}
+
+function removeItem(e){
+e.preventDefault();
+
+if(e.target.classList.contains('delete'))
+{
+   if(confirm('are you sure'))
+   {
+    var li=e.target.parentElement;
+    itemList.removeChild(li);
+   }
+
+}
+}
