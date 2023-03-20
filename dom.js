@@ -64,13 +64,13 @@ title[0].style.color='green';
 
 //queryselector
 
-var header=document.querySelector('#main-header');
-header.style.borderBottom='solid 4px #ccc ';
-var input=document.querySelector('input');
-input.value='hello';
+//var header=document.querySelector('#main-header');
+//header.style.borderBottom='solid 4px #ccc ';
+//var input=document.querySelector('input');
+//input.value='hello';
 
-var submit=document.querySelector('input[type=submit]');
-submit.value='send';
+//var submit=document.querySelector('input[type=submit]');
+//submit.value='send';
 
 //var item=document.querySelector('.list-group-item');
 //item.style.color='red';
@@ -79,21 +79,21 @@ submit.value='send';
 //var lastitem=document.querySelector('.list-group-item:last-child');
 //lastitem.style.color="blue";
  
-var nthitem=document.querySelector('.list-group-item:nth-child(2)');
-nthitem.style.backgroundColor='green';
+//var nthitem=document.querySelector('.list-group-item:nth-child(2)');
+//nthitem.style.backgroundColor='green';
 
-var nnitem=document.querySelector('.list-group-item:nth-child(3)');
-nnitem.style.visibility='hidden';
+//var nnitem=document.querySelector('.list-group-item:nth-child(3)');
+//nnitem.style.visibility='hidden';
 
 
 //queryselectorall
-var li=document.querySelectorAll('li');
-li[1].style.color='green';
+//var li=document.querySelectorAll('li');
+//li[1].style.color='green';
 
-var odd=document.querySelectorAll('li:nth-child(odd)');
-for(var i=0;i<odd.length;i++)
+//var odd=document.querySelectorAll('li:nth-child(odd)');
+//for(var i=0;i<odd.length;i++)
 {
-    odd[i].style.backgroundColor='green';
+    //odd[i].style.backgroundColor='green';
 }
 
 //var even=document.querySelectorAll('li:nth-child(even)');
@@ -101,3 +101,83 @@ for(var i=0;i<odd.length;i++)
 {
     //even[i].style.backgroundColor='#ccc';
 }
+
+//traversing the dom
+
+var itemlist=document.querySelector('#items');
+
+//parentnodeproperty
+
+// console.log(itemlist.parentNode);
+// itemlist.parentNode.style.backgroundColor='#f4f4f4';
+// console.log(itemlist.parentNode.parentNode.parentNode);
+
+//parentelement
+// console.log(itemlist.parentElement);
+//  itemlist.parentElement.style.backgroundColor='#f4f4f4';
+//  console.log(itemlist.parentElement.parentElement.parentElement);
+
+//childnode
+// console.log(itemlist.childNodes);
+
+//children
+// console.log(itemlist.children);
+// console.log(itemlist.children[1]);
+// itemlist.children[1].style.backgroundColor='yellow';
+
+//firstelementchild
+
+// console.log(itemlist.firstElementChild);
+// itemlist.firstElementChild.textContent='hello world';
+
+// //lastelementchild
+// itemlist.lastElementChild.textContent="hellow0";
+
+//nextelementsibling
+//console.log(itemlist.nextElementSibling);
+
+//previoussibling
+
+// console.log(itemlist.previousElementSibling);
+// itemlist.previousElementSibling.style.backgroundColor='yellow';
+
+//newdiv
+
+var newDiv = document.createElement('div');
+console.log(newDiv);
+
+// addclass
+newDiv.className='hello';
+
+console.log(newDiv);
+
+//add id
+newDiv.id='hello1';
+
+console.log(newDiv);
+
+//add attributr
+
+newDiv.setAttribute('title','hellowo');
+console.log(newDiv);
+
+//addtextnode
+var newdivtext=document.createTextNode('hello world');
+
+//append textnode to newdiv
+newDiv.appendChild(newdivtext);
+console.log(newDiv);
+
+var container= document.querySelector('header .container');
+var h1=document.querySelector('header h1');
+console.log(newDiv);
+
+
+container.insertBefore(newDiv, h1);
+console.log(itemlist.parentNode);
+
+var itemlisterr=document.querySelector('div .list-group-item');
+
+console.log(itemlisterr);
+var itemss=document.querySelector('div #items');
+itemss.insertBefore(newDiv,itemlisterr);
